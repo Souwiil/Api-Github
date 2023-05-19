@@ -1,38 +1,225 @@
+body {
+  background-color: #505358;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 20px; 
+  box-sizing: border-box; 
+}
+
 .App {
+  text-align: center;
+  max-width: 1200px; 
+  width: 100%; 
+}
+
+/* Listcard -------------------------------------------------------------------------------------------------------------------------------- */
+
+.repos-results {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-bottom: 30px;
+
+ 
+}
+
+.repo-card {
+  background-color: #e8e8e8;
+  border-radius: 5%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: all 0.5s;
+  font-weight: bolder;
+  cursor: pointer;
+  object-fit: cover;
+  
+}
+.repo-card:hover{
+  border: 1px solid black;
+  transform: scale(1.05);
+}
+
+.repo-card img {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  
+}
+
+.repo-card-content {
+  max-height: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.repo-card h3 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.repo-card p {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+/* Message -------------------------------------------------------------------------------------------------------------------------------- */
+
+.message {
+  background-color: #e8e8e8;
+  border-radius: 10px;
+  border: 1px solid #e8e8e8;
+  margin-bottom: 30px;
+  font-size: 25px;
+  text-align: left; 
+  padding: 5px; 
+}
+
+/* Recherche -------------------------------------------------------------------------------------------------------------------------------- */
+.search-bar {
+  margin-bottom: 20px;
+}
+
+.search-input{
+  margin: 30px;
+  background: none;
+  border: none;
+  outline: none;
+  max-width: 190px;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 9999px;
+  box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
+  color: #fff;
+}
+
+.search-btn {
+  padding: 1.3em 3em;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  color: #000;
+  background-color: #fff;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+}
+.search-btn:hover {
+  background-color: #23c483;
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}
+
+.search-btn:active {
+  transform: translateY(-1px);
+}
+
+/* Navigation  -------------------------------------------------------------------------------------------------------------------------------- */
+
+.nav-container{
+  background-color: #e8e8e8;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  border-radius: 15px;
+  transition: all 0.5s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.nav-container:hover{
+  border: 1px solid black;
+  transform: scale(1.05);
+}
+.nav ul {
+  display: flex;
+  justify-content: space-between; 
+  padding: 0;
+}
+
+.nav li {
+  display: inline; 
+  margin-right: 20px;
+  
+}
+
+.nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  padding: 5px;
+}
+
+.left{
+  background-color: #23c483;
+  border-radius: 5px;
+}
+
+.right {
+  background-color: rgb(223, 111, 111);
+}
+
+/* PLus de repos  -------------------------------------------------------------------------------------------------------------------------------- */
+
+.load-more {
+  margin-top: 5%;
+  text-align: center;
+}
+.btn-load{
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  cursor: pointer;
+  width: 150px;
+  height: 50px;
+  background-image: linear-gradient(to top, #D8D9DB 0%, #fff 80%, #FDFDFD 100%);
+  border-radius: 30px;
+  border: 1px solid #8F9092;
+  transition: all 0.2s ease;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #606060;
+  text-shadow: 0 1px #fff;
+}
+
+.btn-load:hover {
+  box-shadow: 0 4px 3px 1px #FCFCFC, 0 6px 8px #D6D7D9, 0 -4px 4px #CECFD1, 0 -6px 4px #FEFEFE, inset 0 0 3px 3px #CECFD1;
+}
+
+/*  FAQ  -------------------------------------------------------------------------------------------------------------------------------- */
+
+.faq-page {
+  margin-top: 20%;
+  border: 1px solid #FCFCFC;
+  border-radius: 10px; 
+  background-color: #e8e8e8;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.faq-page:hover{
+  border: 1px solid black;
+  transform: scale(1.05);
+}
+
+.faq-page section {
+  margin-top: 20px; 
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
 
-.App-link {
-  color: #61dafb;
-}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+
+
+
+
